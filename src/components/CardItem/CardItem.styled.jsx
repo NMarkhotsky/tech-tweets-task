@@ -4,7 +4,7 @@ export const Item = styled.li`
   position: relative;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
+  justify-content: center;
   align-items: center;
   width: 380px;
   height: 460px;
@@ -30,9 +30,6 @@ export const LogoImage = styled.img`
 `;
 
 export const BackgroundImage = styled.img`
-  /* position: absolute;
-  top: 28px;
-  left: 36px; */
   margin: 0 auto;
 `;
 
