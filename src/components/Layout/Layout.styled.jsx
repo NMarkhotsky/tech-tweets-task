@@ -24,7 +24,7 @@ export const Link = styled(NavLink)`
   font-weight: 500;
 
   &.active {
-    /* color: #ffffff; */
-    background-color: #b8a7e0;
+    color: #ffffff;
+    background-color: #471ca9;
   }
 `;
