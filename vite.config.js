@@ -6,6 +6,6 @@ export default defineConfig({
   plugins: [react()],
   base: '/tech-tweets-task',
   server: {
-    open: '/tech-tweets-task/',
+    open: '/tech-tweets-task',
   },
 });
