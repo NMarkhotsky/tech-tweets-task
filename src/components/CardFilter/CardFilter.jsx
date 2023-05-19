@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useState } from 'react';
-import { statusFilters } from '../../utils/constants/constants';
+import { statusFilters } from '../../utils/constants';
 import {
   DropDownContainer,
   DropDownHeader,

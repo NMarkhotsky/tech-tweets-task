@@ -5,6 +5,7 @@ import { CardFilter } from '../../components/CardFilter/CardFilter';
 import { LoadMoreBtn } from '../../components/LoadMoreBtn/LoadMoreBtn';
 import { BackHomeBtn } from '../../components/BackHomeBtn/BackHomeBtn';
 import { Section } from './Tweets.styled';
+import { scrollOnLoadMore } from '../../utils/scrollOnLoadMore';
 
 function Tweets() {
   const [users, setUsers] = useState([]);
@@ -21,8 +22,9 @@ function Tweets() {
       try {
         const { data } = await getTweets(page, abortController);
 
-        setUsers(prev => [...prev, ...data]);
+        setUsers(prevUsers => [...prevUsers, ...data]);
         setIsLoading(false);
+        scrollOnLoadMore();
       } catch (error) {
         console.log(error);
         setIsLoading(false);

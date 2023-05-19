@@ -2,6 +2,7 @@ import { lazy } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { GlobalStyle } from '../styles/GlobalStyle';
 import Layout from './Layout/Layout';
+import { ScrollToTopArrow } from './ScrollToTop/ScrollToTop';
 
 const Home = lazy(() => import('../pages/Home/Home'));
 const Tweets = lazy(() => import('../pages/Tweets/Tweets'));
@@ -16,6 +17,7 @@ export const App = () => {
           <Route path="*" element={<Navigate to="/" />} />
         </Route>
       </Routes>
+      <ScrollToTopArrow />
       <GlobalStyle />
     </>
   );
