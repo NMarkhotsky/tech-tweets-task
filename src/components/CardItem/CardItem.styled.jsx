@@ -10,8 +10,6 @@ export const Item = styled.li`
   height: 460px;
   padding: 28px 0 36px;
 
-  /* gap: 20px; */
-
   border-radius: 20px;
   background: linear-gradient(
     114.99deg,
@@ -81,4 +79,10 @@ export const Button = styled.button`
   box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   border: none;
+
+  transition: background-color 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+
+  :hover {
+    background-color: ${props => (props.value ? '#5cd3a7ae' : '#ebd8ffae')};
+  }
 `;

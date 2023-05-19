@@ -17,4 +17,6 @@ export const Link = styled(NavLink)`
   :hover {
     background-color: #6165c881;
   }
+
+  transition: background-color 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
 `;

@@ -4,7 +4,6 @@ export const Main = styled.div``;
 
 export const DropDownContainer = styled.div`
   width: 140px;
-  /* margin: 0 0 0 auto; */
 `;
 
 export const DropDownHeader = styled.div`
@@ -23,6 +22,8 @@ export const DropDownHeader = styled.div`
   }
 
   cursor: pointer;
+
+  transition: all 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
 `;
 
 export const DropDownListContainer = styled.div``;
@@ -31,7 +32,6 @@ export const DropDownList = styled.ul`
   position: absolute;
   display: flex;
   flex-direction: column;
-  /* gap: 15px; */
 
   border-radius: 10px;
 
@@ -46,6 +46,8 @@ export const DropDownList = styled.ul`
   &:last-child {
     padding-bottom: 0.8em;
   }
+
+  transition: all 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
 `;
 
 export const ListItem = styled.li`
@@ -55,4 +57,6 @@ export const ListItem = styled.li`
     background-color: #6165c881;
   }
   cursor: pointer;
+
+  transition: all 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
 `;

@@ -11,7 +11,7 @@ import {
 } from './CardFilter.styled';
 import { BsFilterLeft } from 'react-icons/bs';
 
-export const CardFilter = ({ handleFilterChange }) => {
+export const CardFilter = ({ handleFilterChange, resetPage }) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggling = () => setIsOpen(!isOpen);
 
@@ -31,6 +31,7 @@ export const CardFilter = ({ handleFilterChange }) => {
                   onClick={() => {
                     handleFilterChange(el);
                     setIsOpen(false);
+                    resetPage(1);
                   }}
                 >
                   {el}

@@ -1,6 +1,7 @@
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import { Header, Link } from './Layout.styled';
+import { Toaster } from 'react-hot-toast';
 
 function Layout() {
   return (
@@ -14,6 +15,7 @@ function Layout() {
       <Suspense fallback={<div>Loading.....</div>}>
         <Outlet />
       </Suspense>
+      <Toaster />
     </>
   );
 }

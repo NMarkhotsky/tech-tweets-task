@@ -11,31 +11,23 @@ function Tweets() {
   const [users, setUsers] = useState([]);
   const [page, setPage] = useState(1);
   const [filter, setFilter] = useState('All');
-  // const [error, setError] = useState(null);
+  const [showLoadMore, setShowLoadMore] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    const abortController = new AbortController();
-
     const getData = async () => {
       setIsLoading(true);
       try {
-        const { data } = await getTweets(page, abortController);
-
-        setUsers(prevUsers => [...prevUsers, ...data]);
+        const { data } = await getTweets();
+        setUsers(data);
         setIsLoading(false);
-        scrollOnLoadMore();
       } catch (error) {
         console.log(error);
         setIsLoading(false);
       }
     };
-
     getData();
-    return () => {
-      abortController.abort();
-    };
-  }, [page]);
+  }, []);
 
   const handleFollowing = useCallback((id, following) => {
     try {
@@ -69,34 +61,49 @@ function Tweets() {
   }, []);
 
   const filteredUsers = useMemo(() => {
+    let filtered = users;
+
     switch (filter) {
       case 'All':
-        return users;
+        break;
 
       case 'Follow':
-        return users.filter(user => !user.following);
+        filtered = filtered.filter(user => !user.following);
+        break;
 
       case 'Followings':
-        return users.filter(user => user.following);
+        filtered = filtered.filter(user => user.following);
+        break;
 
       default:
-        return users;
+        filtered;
+        break;
     }
-  }, [filter, users]);
+
+    const endIndex = page * 3;
+    setShowLoadMore(endIndex);
+    return filtered.slice(0, endIndex);
+  }, [filter, page, users]);
 
   const handleBtnLoadMore = () => {
     setPage(prevPage => prevPage + 1);
+    scrollOnLoadMore();
   };
+
+  const isLoadMoreVisible = showLoadMore === filteredUsers.length;
 
   return (
     <main>
       <Section>
         <BackHomeBtn />
-        <CardFilter handleFilterChange={handleFilterChange} />
+        <CardFilter
+          handleFilterChange={handleFilterChange}
+          resetPage={setPage}
+        />
       </Section>
       <section>
         <CardList users={filteredUsers} onClick={handleFollowing} />
-        {users.length < 12 && (
+        {isLoadMoreVisible && (
           <LoadMoreBtn
             handleBtnLoadMore={handleBtnLoadMore}
             disabled={isLoading}
