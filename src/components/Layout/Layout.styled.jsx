@@ -8,7 +8,7 @@ export const Header = styled.header`
   gap: 12px;
   padding: 8px 0;
   margin-bottom: 16px;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #ffffff;
 
   > nav {
     display: flex;
@@ -18,13 +18,12 @@ export const Header = styled.header`
 
 export const Link = styled(NavLink)`
   padding: 8px 16px;
-  border-radius: 4px;
+  border-radius: 10px;
   text-decoration: none;
-  color: black;
+  color: #ffffff;
   font-weight: 500;
 
   &.active {
-    color: #ffffff;
     background-color: #471ca9;
   }
 `;

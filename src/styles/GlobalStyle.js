@@ -4,7 +4,8 @@ import 'modern-normalize';
 export const GlobalStyle = createGlobalStyle`
 
  body {
-  margin: 0;
+  max-width: 1280px;
+  margin: 0 auto;
   padding: 15px;
 
   font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -45,5 +46,9 @@ img {
 
 a {
   text-decoration: none;
+}
+
+button {
+  cursor: pointer;
 }
 `;

@@ -1,26 +1,12 @@
-import { useEffect } from 'react';
-import { useState } from 'react';
-import { getTweets } from '../../services/api';
+/* eslint-disable react/prop-types */
 import { CardItem } from '../CardItem/CardItem';
 import { List } from './CardList.styled';
 
-export const CardList = () => {
-  const [users, setUsers] = useState([]);
-  console.log('users: ', users);
-
-  useEffect(() => {
-    const getData = async () => {
-      const { data } = await getTweets();
-      setUsers([...data]);
-    };
-
-    getData();
-  }, []);
-
+export const CardList = ({ users, onClick }) => {
   return (
     <List>
       {users.map(user => (
-        <CardItem key={user.id} {...user} />
+        <CardItem key={user.id} {...user} onClick={onClick} />
       ))}
     </List>
   );

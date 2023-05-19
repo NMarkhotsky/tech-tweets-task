@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import {
   Item,
   ThumbAvatar,
@@ -6,13 +7,20 @@ import {
   AvatarImage,
   Thumb,
   ThumbInfo,
+  Button,
 } from './CardItem.styled';
 import logo from '../../assets/logo.png';
 import background from '../../assets/background.png';
-import { CardButton } from '../CardButton/CardButton';
 
-// eslint-disable-next-line react/prop-types
-export const CardItem = ({ avatar, followers, isFollowing, tweets, user }) => {
+export const CardItem = ({
+  id,
+  avatar,
+  followers,
+  following,
+  tweets,
+  user,
+  onClick,
+}) => {
   return (
     <Item>
       <LogoImage src={logo} alt="logo" loading="lazy" />
@@ -32,9 +40,15 @@ export const CardItem = ({ avatar, followers, isFollowing, tweets, user }) => {
       <ThumbInfo>
         {/* <p>{user}</p> */}
         <p>{tweets} TWEETS</p>
-        <p>{followers} FOLLOWERS</p>
+        <p>{followers.toLocaleString('en-US')} FOLLOWERS</p>
       </ThumbInfo>
-      <CardButton isFollowing={isFollowing} />
+      <Button
+        type="button"
+        value={following}
+        onClick={() => onClick(id, following)}
+      >
+        {following ? 'Follow' : 'Following'}
+      </Button>
     </Item>
   );
 };
