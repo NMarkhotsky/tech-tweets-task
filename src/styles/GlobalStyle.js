@@ -16,7 +16,7 @@ export const GlobalStyle = createGlobalStyle`
   font-size: 20px;
   line-height: 1.2;
 
-  background-color: #8865d9; 
+  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
   color: #ffffff;
 }
 code {

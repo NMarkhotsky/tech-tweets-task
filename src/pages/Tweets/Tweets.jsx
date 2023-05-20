@@ -36,8 +36,8 @@ function Tweets() {
         prevUsers.map(user => {
           if (user.id === id) {
             const updatedFollowers = following
-              ? user.followers - 1
-              : user.followers + 1;
+              ? user.followers + 1
+              : user.followers - 1;
 
             const updatedUser = {
               ...user,

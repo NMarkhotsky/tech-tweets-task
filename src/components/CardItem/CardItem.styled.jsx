@@ -75,7 +75,7 @@ export const Button = styled.button`
   padding: 14px 39px;
   min-width: 196px;
 
-  background-color: ${props => (props.value ? '#5CD3A8' : '#ebd8ff')};
+  background-color: ${props => (props.value ? '#ebd8ff' : '#5CD3A8')};
   box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   border: none;
@@ -83,6 +83,6 @@ export const Button = styled.button`
   transition: background-color 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
 
   :hover {
-    background-color: ${props => (props.value ? '#5cd3a7ae' : '#ebd8ffae')};
+    background-color: ${props => (props.value ? '#ebd8ffae' : '#5cd3a7ae')};
   }
 `;
