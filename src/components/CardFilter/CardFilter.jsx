@@ -24,7 +24,7 @@ export const CardFilter = ({ handleFilterChange, resetPage }) => {
         {isOpen && (
           <DropDownListContainer>
             <DropDownList>
-              {statusFilters.map(el => (
+              {Object.keys(statusFilters).map(el => (
                 <ListItem
                   key={Math.random()}
                   type="button"

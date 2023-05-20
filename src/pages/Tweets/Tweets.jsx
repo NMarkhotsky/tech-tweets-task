@@ -3,15 +3,16 @@ import { getTweets, updateTweets } from '../../services/api';
 import { CardList } from '../../components/CardList/CardList';
 import { CardFilter } from '../../components/CardFilter/CardFilter';
 import { LoadMoreBtn } from '../../components/LoadMoreBtn/LoadMoreBtn';
-import { BackHomeBtn } from '../../components/BackHomeBtn/BackHomeBtn';
+import { LinkToBack } from '../../components/LinkToBack/LinkToBack';
 import { Section } from './Tweets.styled';
 import { scrollOnLoadMore } from '../../utils/scrollOnLoadMore';
+import { all, follow, followings } from '../../utils/constants';
 
 function Tweets() {
   const [users, setUsers] = useState([]);
   const [page, setPage] = useState(1);
-  const [filter, setFilter] = useState('All');
-  const [showLoadMore, setShowLoadMore] = useState(false);
+  const [filter, setFilter] = useState('all');
+  const [showLoadMore, setShowLoadMore] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
@@ -64,19 +65,18 @@ function Tweets() {
     let filtered = users;
 
     switch (filter) {
-      case 'All':
+      case all:
         break;
 
-      case 'Follow':
+      case follow:
         filtered = filtered.filter(user => !user.following);
         break;
 
-      case 'Followings':
+      case followings:
         filtered = filtered.filter(user => user.following);
         break;
 
       default:
-        filtered;
         break;
     }
 
@@ -95,7 +95,7 @@ function Tweets() {
   return (
     <main>
       <Section>
-        <BackHomeBtn />
+        <LinkToBack />
         <CardFilter
           handleFilterChange={handleFilterChange}
           resetPage={setPage}

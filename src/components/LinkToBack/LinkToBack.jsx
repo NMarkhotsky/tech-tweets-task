@@ -1,7 +1,7 @@
 import { MdArrowBackIos } from 'react-icons/md';
-import { Link } from './BackHomeBtn.styled';
+import { Link } from './LinkToBack.styled';
 
-export const BackHomeBtn = () => {
+export const LinkToBack = () => {
   return (
     <Link to="/">
       <MdArrowBackIos />
