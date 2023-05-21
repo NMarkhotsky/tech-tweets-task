@@ -113,10 +113,6 @@ function Tweets() {
             disabled={isLoading}
           />
         )}
-        <LoadMoreBtn
-          handleBtnLoadMore={handleBtnLoadMore}
-          disabled={isLoading}
-        />
       </section>
     </Main>
   );
