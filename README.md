@@ -1,4 +1,6 @@
-# Тестове завдання ✅
+# Тестове завдання [✅](https://nmarkhotsky.github.io/tech-tweets-task/)
+![preview](https://github.com/NMarkhotsky/tech-tweets-task/assets/111852661/0a039e1b-2989-438c-b891-bddb0467cee1)
+###
 <b>Мета:</b> створити картки твітів та додати інтерактивності при клікові на кнопку.
 ###
 ![requirmentsImg](https://github.com/NMarkhotsky/tech-tweets-task/assets/111852661/7cf61eeb-80c2-4567-a877-66b778a36088)
