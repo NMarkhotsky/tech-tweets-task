@@ -1,6 +1,6 @@
+import PropTypes from 'prop-types';
 import { Button } from './LoadMoreBtn.styled';
 
-/* eslint-disable react/prop-types */
 export const LoadMoreBtn = ({ handleBtnLoadMore, disabled }) => {
   return (
     <Button
@@ -11,4 +11,9 @@ export const LoadMoreBtn = ({ handleBtnLoadMore, disabled }) => {
       {disabled ? 'Load More...' : 'Load More'}
     </Button>
   );
+};
+
+LoadMoreBtn.propTypes = {
+  handleBtnLoadMore: PropTypes.func.isRequired,
+  disabled: PropTypes.bool.isRequired,
 };

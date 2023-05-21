@@ -1,6 +1,7 @@
-/* eslint-disable react/prop-types */
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 import { statusFilters } from '../../utils/constants';
+import { BsFilterLeft } from 'react-icons/bs';
 import {
   DropDownContainer,
   DropDownHeader,
@@ -9,7 +10,6 @@ import {
   ListItem,
   Main,
 } from './CardFilter.styled';
-import { BsFilterLeft } from 'react-icons/bs';
 
 export const CardFilter = ({ handleFilterChange, resetPage }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -43,4 +43,9 @@ export const CardFilter = ({ handleFilterChange, resetPage }) => {
       </DropDownContainer>
     </Main>
   );
+};
+
+CardFilter.propTypes = {
+  handleFilterChange: PropTypes.func.isRequired,
+  resetPage: PropTypes.func.isRequired,
 };

@@ -4,9 +4,9 @@ import { CardList } from '../../components/CardList/CardList';
 import { CardFilter } from '../../components/CardFilter/CardFilter';
 import { LoadMoreBtn } from '../../components/LoadMoreBtn/LoadMoreBtn';
 import { LinkToBack } from '../../components/LinkToBack/LinkToBack';
-import { Section } from './Tweets.styled';
 import { scrollOnLoadMore } from '../../utils/scrollOnLoadMore';
 import { all, follow, followings } from '../../utils/constants';
+import { Main, Section } from './Tweets.styled';
 
 function Tweets() {
   const [users, setUsers] = useState([]);
@@ -18,12 +18,16 @@ function Tweets() {
   useEffect(() => {
     const getData = async () => {
       setIsLoading(true);
+
       try {
         const { data } = await getTweets();
+
         setUsers(data);
         setIsLoading(false);
       } catch (error) {
         console.log(error);
+        setIsLoading(false);
+      } finally {
         setIsLoading(false);
       }
     };
@@ -93,7 +97,7 @@ function Tweets() {
   const isLoadMoreVisible = showLoadMore === filteredUsers.length;
 
   return (
-    <main>
+    <Main>
       <Section>
         <LinkToBack />
         <CardFilter
@@ -109,8 +113,12 @@ function Tweets() {
             disabled={isLoading}
           />
         )}
+        <LoadMoreBtn
+          handleBtnLoadMore={handleBtnLoadMore}
+          disabled={isLoading}
+        />
       </section>
-    </main>
+    </Main>
   );
 }
 

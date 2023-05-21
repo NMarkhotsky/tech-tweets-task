@@ -75,10 +75,14 @@ export const Button = styled.button`
   padding: 14px 39px;
   min-width: 196px;
 
-  background-color: ${props => (props.value ? '#ebd8ff' : '#5CD3A8')};
-  box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.25);
+  font-weight: 600;
+  font-size: 18px;
+
   border-radius: 10px;
   border: none;
+  box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.25);
+
+  background-color: ${props => (props.value ? '#ebd8ff' : '#5CD3A8')};
 
   transition: background-color 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
 

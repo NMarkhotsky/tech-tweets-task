@@ -1,4 +1,6 @@
-/* eslint-disable react/prop-types */
+import PropTypes from 'prop-types';
+import logo from '../../assets/logo.png';
+import background from '../../assets/background.png';
 import {
   Item,
   ThumbAvatar,
@@ -9,8 +11,6 @@ import {
   ThumbInfo,
   Button,
 } from './CardItem.styled';
-import logo from '../../assets/logo.png';
-import background from '../../assets/background.png';
 
 export const CardItem = ({
   id,
@@ -38,7 +38,7 @@ export const CardItem = ({
         </ThumbAvatar>
       </Thumb>
       <ThumbInfo>
-        {/* <p>{user}</p> */}
+        <p>{user}</p>
         <p>{tweets} TWEETS</p>
         <p>{followers.toLocaleString('en-US')} FOLLOWERS</p>
       </ThumbInfo>
@@ -51,4 +51,14 @@ export const CardItem = ({
       </Button>
     </Item>
   );
+};
+
+CardItem.propTypes = {
+  id: PropTypes.string.isRequired,
+  avatar: PropTypes.string.isRequired,
+  followers: PropTypes.number.isRequired,
+  following: PropTypes.bool.isRequired,
+  tweets: PropTypes.number.isRequired,
+  user: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
 };

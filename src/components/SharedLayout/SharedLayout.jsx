@@ -1,9 +1,9 @@
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
-import { Header, Link } from './Layout.styled';
+import { Footer, Header, Link, Paragraph } from './SharedLayout.styled';
 import { Toaster } from 'react-hot-toast';
 
-function Layout() {
+function SharedLayout() {
   return (
     <>
       <Header>
@@ -12,12 +12,17 @@ function Layout() {
           <Link to="/tweets">Tweets</Link>
         </nav>
       </Header>
-      <Suspense fallback={<div>Loading.....</div>}>
+      <Suspense fallback={<div>Loading...</div>}>
         <Outlet />
       </Suspense>
+      <Footer>
+        <Paragraph>
+          Created by <b>Mykola Markhotskyi</b>
+        </Paragraph>
+      </Footer>
       <Toaster />
     </>
   );
 }
 
-export default Layout;
+export default SharedLayout;

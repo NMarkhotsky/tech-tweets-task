@@ -27,3 +27,13 @@ export const Link = styled(NavLink)`
     background-color: #471ca9a8;
   }
 `;
+
+export const Footer = styled.footer`
+  padding: 30px 0;
+  margin-top: 16px;
+  border-top: 1px solid #ffffff;
+`;
+
+export const Paragraph = styled.p`
+  text-align: center;
+`;
