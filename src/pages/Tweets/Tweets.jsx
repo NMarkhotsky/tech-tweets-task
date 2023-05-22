@@ -73,11 +73,11 @@ function Tweets() {
         break;
 
       case follow:
-        filtered = filtered.filter(user => !user.following);
+        filtered = filtered.filter(user => user.following);
         break;
 
       case followings:
-        filtered = filtered.filter(user => user.following);
+        filtered = filtered.filter(user => !user.following);
         break;
 
       default:
