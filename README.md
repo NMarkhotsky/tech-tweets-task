@@ -3,7 +3,7 @@
 ###
 <b>Мета:</b> створити картки твітів та додати інтерактивності при клікові на кнопку.
 ###
-![requirmentsImg](https://github.com/NMarkhotsky/tech-tweets-task/assets/111852661/7cf61eeb-80c2-4567-a877-66b778a36088)
+![preview_2](https://github.com/NMarkhotsky/tech-tweets-task/assets/111852661/73940d34-fac4-4772-bdd2-5ec13accab6f)
 ###
 Загальний вигляд картки у двох станах - Follow та Following
 ###
